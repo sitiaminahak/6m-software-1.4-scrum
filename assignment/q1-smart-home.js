@@ -6,23 +6,38 @@
     - In the respective child classes, call `super()` with it's type.
 */
 
-// Task: Add code here
+class BaseSignal {
+    constructor(type){
+        if(this.constructor.name === "BaseSignal"){
+            throw new Error("This class cannot be instantiated");
+        }
+        this.type = type;
+    }
+
+   send() {
+        console.log(`Sending ${this.type} signal`) ;
+    }
+
+}
 
 class TvSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+    constructor(type){
+        super(type);
+        this.type = "tv";
     }
 }
 
 class AirconSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+    constructor(type){
+        super(type);
+        this.type = "aircon";
     }
 }
 
 class DoorSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+    constructor(type){
+        super(type);
+        this.type = "door";
     }
 }
 
